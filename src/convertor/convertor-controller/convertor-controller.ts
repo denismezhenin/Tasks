@@ -1,4 +1,4 @@
-import { conversionDistanceRate } from 'convertor/db/db';
+import { conversionDistanceRate } from '../db/db';
 
 export const expandConversionDistanceRate = (expandedData) => {
   for (const key in expandedData) {
@@ -8,6 +8,7 @@ export const expandConversionDistanceRate = (expandedData) => {
       console.log('The value already exists');
     } else {
       conversionDistanceRate[key] = expandedData[key];
+      console.log(`${key} has been added to database`)
     }
   }
 };

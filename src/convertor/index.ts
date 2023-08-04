@@ -1,7 +1,7 @@
 import {
   convertDistance,
   expandConversionDistanceRate,
-} from './controller/controller';
+} from './convertor-controller/convertor-controller';
 
 export const convertor = (inputJSON: string) => {
   try {
