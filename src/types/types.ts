@@ -10,3 +10,9 @@ export interface DataItem {
 export interface ConditionItem {
   [key: string]: any;
 }
+
+export interface Point {
+  x: number;
+  y: number;
+  z: number;
+}

@@ -11,8 +11,8 @@ export const sortIncomingData = (inputJSON: string) => {
     if (sortControllers[key]) {
       result = sortControllers[key](result, data.condition[key]);
     } else {
-      console.log(`There is no ${key} in sort function`);
+      return `There is no ${key} in sort function`;
     }
   }
-  return JSON.stringify(result);
+  return JSON.stringify({ result });
 };

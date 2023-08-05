@@ -3,12 +3,12 @@ import { conversionDistanceRate } from '../db/db';
 export const expandConversionDistanceRate = (expandedData) => {
   for (const key in expandedData) {
     if (typeof expandedData[key] !== 'number') {
-      console.log('You need to provide a number');
+      return 'You need to provide a number';
     } else if (conversionDistanceRate[key]) {
-      console.log('The value already exists');
+      return 'The value already exists';
     } else {
       conversionDistanceRate[key] = expandedData[key];
-      console.log(`${key} has been added to database`)
+      return `${key} has been added to database`;
     }
   }
 };
@@ -19,7 +19,7 @@ export const convertDistance = (
   toUnit: string,
 ) => {
   if (!conversionDistanceRate[fromUnit] || !conversionDistanceRate[fromUnit]) {
-    return console.log('Unsupported conversion units');
+    return 'Unsupported conversion units';
   }
   const value = (
     (distance * conversionDistanceRate[fromUnit]) /
